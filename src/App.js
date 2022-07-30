@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import TeamSelect from "./TeamSelect";
 
 function App() {
+  const teamsData = [
+    { id: 1, name: "Vejle Boldklub" },
+    { id: 2, name: "Borrusia Dortmund" },
+    { id: 3, name: "Inter Milan" },
+    { id: 4, name: "AC Milan" },
+    { id: 5, name: "FC Barcalona" },
+    { id: 6, name: "Manchester United" },
+    { id: 7, name: "FC Bayern München" },
+    { id: 8, name: "Liverpool FC" }
+  ]
+
+  const [teams, setTeams] = useState(teamsData)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Football Manager</h1>
+      <TeamSelect teams={teams} />
+    </>
   );
 }
 
