@@ -14,11 +14,18 @@ function App() {
   ]
 
   const [teams, setTeams] = useState(teamsData)
+  const [selectedTeam, setSelectedTeam] = useState({})
+
+  function selectTeam(team){
+    setSelectedTeam(team)
+  }
 
   return (
     <>
       <h1>Football Manager</h1>
-      <TeamSelect teams={teams} />
+      <TeamSelect teams={teams} selectTeam={selectTeam}/>
+      <hr />
+      <h2>{JSON.stringify(selectedTeam)}</h2>
     </>
   );
 }
