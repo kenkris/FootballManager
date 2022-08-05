@@ -1,5 +1,7 @@
 import React, { useState } from "react"
-import TeamSelect from "./TeamSelect";
+import TeamSelect from "./TeamSelect"
+import Navbar from "./Navbar"
+import "./style/style.css"
 
 function App() {
   const teamsData = [
@@ -22,9 +24,8 @@ function App() {
 
   return (
     <>
-      <h1>Football Manager</h1>
-      <TeamSelect teams={teams} selectTeam={selectTeam}/>
-      <hr />
+      <Navbar />
+      <TeamSelect teams={teams} selectTeam={selectTeam} />
       <h2>{JSON.stringify(selectedTeam)}</h2>
     </>
   );

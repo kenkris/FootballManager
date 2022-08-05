@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.nav {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+nav a.site-title {
+    display: flex;
+    font-size: x-large;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a.active {
+    color: palevioletred;
+    font-weight: bold;
+}
