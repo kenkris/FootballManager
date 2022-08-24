@@ -1,15 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     return (
         <nav className="nav">
-            <a className="site-title" href="/">Football Manager</a>
+            <Link className="site-title" to="/">Football Manager</Link>
             <ul>
                 <li>
-                    <a href="/new-game">New game</a>
+                    <Link to="/new-game">New game</Link>
                 </li>
                 <li>
-                    <a href="/my-team">My Team</a>
+                    <Link to="/my-team">My Team</Link>
                 </li>
             </ul>
         </nav>

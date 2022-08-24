@@ -1,21 +1,12 @@
 import React, { useState } from "react"
 import Navbar from "./Navbar"
 import MyTeam from "./MyTeam"
+import { Route, Routes } from "react-router-dom"
 
 import "./style/style.css"
+import NewGame from "./NewGame"
 
 function App() {
-
-    // Home made routing for now - replace with react router
-    let component;
-    switch(window.location.pathname){
-        case "/":
-            component = <MyTeam />
-            break;
-        case "/my-team":
-            component = <MyTeam />
-            break;
-    }
 
     const teamsData = [
         { id: 1, name: "Vejle Boldklub" },
@@ -28,17 +19,24 @@ function App() {
         { id: 8, name: "Liverpool FC" }
     ]
 
-    const [teams, setTeams] = useState(teamsData)
+    const [teams] = useState(teamsData)
     const [selectedTeam, setSelectedTeam] = useState({})
 
     function selectTeam(team) {
+        console.log(team)
         setSelectedTeam(team)
     }
 
     return (
         <>
             <Navbar />
-            {component}
+            <Routes>
+                {/* Home goes to my team for now.
+                Later on element will not be duplicated and sep. home view will be made */}
+                <Route path="/" element={<MyTeam selectedTeam={selectedTeam}/>} />
+                <Route path="/my-team" element={<MyTeam selectedTeam={selectedTeam} />} />
+                <Route path="/new-game"element={<NewGame teams={teams} selectTeam={selectTeam} />} />
+            </Routes>
         </>
     );
 }

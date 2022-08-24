@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function MyTeam() {
+export default function MyTeam({selectedTeam}) {
     return (
         <>
-            <div>My Team</div>
+            <div>
+                <h1>My Team</h1>
+                <p>{selectedTeam.name}</p>
+            </div>
         </>
     )
 }
